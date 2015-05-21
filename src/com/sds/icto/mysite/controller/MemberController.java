@@ -27,8 +27,9 @@ public class MemberController {
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join( @ModelAttribute MemberVo vo){
 		memberService.joinUser( vo );
-		return "redirect:/index";
+		return "redirect:/member/joinsuccess";
 	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
@@ -54,4 +55,6 @@ public class MemberController {
 		session.invalidate();
 		return "redirect:/index";
 	}
+	
+	
 }
