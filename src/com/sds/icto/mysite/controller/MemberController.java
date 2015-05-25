@@ -27,7 +27,7 @@ public class MemberController {
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join( @ModelAttribute MemberVo vo){
 		memberService.joinUser( vo );
-		return "redirect:/member/joinsuccess";
+		return "member/joinsuccess";
 	}
 	
 	
@@ -56,5 +56,8 @@ public class MemberController {
 		return "redirect:/index";
 	}
 	
-	
+	@RequestMapping("/modify")
+	public String modifyMember() {
+		return "member/uinfoform";
+	}
 }

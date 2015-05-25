@@ -15,8 +15,7 @@
 		<div id="content">
 			<h2>자유게시판</h2>
 			<div id="board">
-				<form class="board-form" method="post" action="/mysite3/board">
-					<input type = "hidden" name = "a" value="add">
+				<form class="board-form" method="post" action="/mysite3/board/write">
 					<input type = "hidden" name = "memberno" value="${authMember.getNo() }">
 					<input type = "hidden" name = "name" value="${authMember.getName() }">
 					<table class="tbl-ex">

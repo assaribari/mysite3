@@ -40,8 +40,6 @@ public void insert(MemberVo vo){
 		
 	}
 	
-	public MemberVo getMember(MemberVo vo){
-		return null;
-	}
+
 
 }//MemberDao

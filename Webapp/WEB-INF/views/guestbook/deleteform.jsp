@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fn"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!doctype html>
@@ -17,19 +17,18 @@
 		</div>
 		<div id="content">
 			<div id="guestbook" class="delete-form">
-				<form action="/mysite3/gb?a=delete" method="post">
-					<input type="hidden" name="a" value="delete"> <input
-						type='hidden' name="no" value=${ param.no}>
+				<form action="/mysite3/guestbook/delete" method="post">
+					<input type='hidden' name="no" value=${ param.no}>
 					<table>
 						<tr>
 							<td>비밀번호</td>
 							<td><input type="password" name="password"></td>
 							<td><input type="submit" value="확인"></td>
-							<td><a href="/mysite3/gb?a=guestbookform">메인으로 돌아가기</a></td>
+							<td><a href="/mysite3/index">메인으로 돌아가기</a></td>
 						</tr>
 					</table>
 				</form>
-				<a href="/mysite3/gb?a=guestbookform">방명록 리스트</a>
+				<a href="/mysite3/guestbook/">방명록 리스트</a>
 			</div>
 		</div>
 		<div id="navigation">

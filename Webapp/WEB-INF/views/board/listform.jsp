@@ -26,7 +26,7 @@
 				
 				<p class="totalcont">총 게시물 : 35개
 				
-				<a href="/mysite3/views/board/writeform.jsp" class = "write">글쓰기</a></p>
+				<a href="/mysite3/board/write" class = "write">글쓰기</a></p>
 				
 				
 				<table class="tbl-ex">
@@ -42,13 +42,13 @@
 				<c:forEach items="${list }" var="vo" varStatus="status">
 					<tr>
 						<td>${status.count }</td>
-						<td><a href="/mysite3/board?a=contents&no=${vo.no }">${vo.title }</a></td>
+						<td><a href="/mysite3/board/view/${vo.no }">${vo.title }</a></td>
 						<td>${ vo.name }</td>
 						<td>${ vo.sysdate }</td>
 						<td>${ vo.viewcount }</td>
 						<td>
 							<c:if test="${authMember.no == vo.memberno }">
-							<a href="/mysite3/board?a=delete&no=${vo.no }" class="del">삭제</a>
+							<a href="/mysite3/board/delete/${vo.no }" class="del">삭제</a>
 							</c:if>
 						</td>
 					</tr>

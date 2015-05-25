@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <%@ page contentType="text/html;charset=UTF-8"%>
-
+<% pageContext.setAttribute("newLineChar", "\n"); %>
 
 <!doctype html>
 <html>
@@ -20,8 +20,7 @@
 		</div>
 		<div id="content">
 			<div id="guestbook">
-				<form action="/mysite3/gb" method="post">
-					<input type="hidden" name="a" value="add">
+				<form action="/mysite3/guestbook/insert" method="post">
 					<table border=1 width=500>
 						<tr>
 							<td>이름</td>
@@ -46,10 +45,10 @@
 									<td>${vo.name }</td>
 									<td>${vo.sysdate }</td>
 								<td><a
-									href="/mysite3/views/guestbook/deleteform.jsp?no=${ vo.no }">삭제</a></td>
+									href="/mysite3/guestbook/delete?no=${ vo.no }">삭제</a></td>
 							</tr>
 							<tr>
-								<td colspan=4>${ vo.message }</td>
+								<td colspan=4>${fn:replace( vo.message, newLineChar, "<br>" ) }</td>
 							</tr>
 						</table> 
 						</c:forEach>  <br>

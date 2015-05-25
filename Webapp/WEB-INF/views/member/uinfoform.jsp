@@ -18,7 +18,7 @@
 		<div id="content">
 			<div id="user">
 
-				<form id="uinfo-form" name="uinfoForm" method="post" action="/mysite3/main">
+				<form id="uinfo-form" name="uinfoForm" method="post" action="/mysite3/index">
 					<input type="hidden" name="a" value="uinfo">
 					<label class="block-label" for="name">이름</label>
 					<input id="name" name="name" type="text" value="${ authMember.getName() }">
